@@ -1,26 +1,26 @@
 smpl @all
 
 'name of the variable
-%v="p"
+%v="ygr"
 
 ' Rolling or expanding strategy? 
 'If !strategy_rolling=1 rolling strategy is used,
 'if !strategy_rolling=0 expanding strategy is used
-!strategy_rolling=0
+!strategy_rolling=1
 ' length of  out-of-sample forecast 
-!n_step_forecast = 6
+!n_step_forecast = 2
 
 ' number of rolling samples
-!num_rolling = 36
+!num_rolling = 21
 
 ' last date in the first estimation period (this is T in the slides)
-%T="2008m12"
+%T="2008q4"
 
 
 
 'length of the rolling forecast window (denoted as w in the lectures). 
 'NOTE: This parameter is ignored if expanding strategy is used
-!w=40
+!w=24
 
 '================= Main Program ========================
 'Initialization of forecast evaluation statistics

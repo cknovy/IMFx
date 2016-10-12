@@ -6,22 +6,21 @@ smpl @all
 ' Rolling or expanding strategy? 
 'If !strategy_rolling=1 rolling strategy is used,
 'if !strategy_rolling=0 expanding strategy is used
-!strategy_rolling=1
-
+!strategy_rolling=0
 ' length of  out-of-sample forecast 
-!n_step_forecast = 4
+!n_step_forecast = 6
 
 ' number of rolling samples
-!num_rolling = 8
+!num_rolling = 36
 
 ' last date in the first estimation period (this is T in the slides)
-%T="2013m12"
+%T="2008m12"
 
 
 
 'length of the rolling forecast window (denoted as w in the lectures). 
 'NOTE: This parameter is ignored if expanding strategy is used
-!w=36
+!w=40
 
 '================= Main Program ========================
 'Initialization of forecast evaluation statistics
@@ -47,7 +46,7 @@ for !i=0 to !num_rolling-1
 	'====== Run your forecast model here ============================ 
 	'It can be as complicated as you want. 
 	'%v is the variable that will be forecasted (see the beginnning of the file)
-	equation eq1.ls {%v} c {%v}(-1) {%v}(-2)
+	equation eq1.ls {%v} c {%v}(-1)
   	'==========================================================
 	' forecast inflation for !n_step_forecast ahead
 	'forecast sample 
